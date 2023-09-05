@@ -53,5 +53,5 @@ def ksum_pairs(array,k):
             j-=1
     return ans
 
-print(ksum_pairs([1,2,3,4],5))
-print(ksum_pairs([3,1,3,4,3], 6))
+print(ksum_pairs([1,2,3,4],5))   #2
+print(ksum_pairs([3,1,3,4,3], 6))   #1
