@@ -29,3 +29,38 @@ Output: 2
 Explanation: You must delete one element.
  
 '''
+
+# -------------sol-----------
+# initialize start=0,max_len=0,zero_count=0
+# iterate over array using the i pointer loop
+# if item found is 0 , increase zero_count
+# we can afford atmost one zero , coz it will get deleted in end
+# if zero count goes above 1 , reduce the window from the start
+# window length will be i-start , coz 1 will always be subtracted from total len
+# compare len with max_len at each iteration
+# finally return the max_len
+
+def longest_subarray_after_deleting_one_element(array):
+    start = 0
+    max_len = 0
+    zero_count = 0
+    for i in range(0,len(array)):
+        if array[i]==0:
+            zero_count+=1
+        while(zero_count>1):
+            if array[start]==0:
+                zero_count-=1
+            start+=1
+        max_len= max(max_len,i-start)
+    
+    return max_len
+
+
+print(longest_subarray_after_deleting_one_element([1,1,0,1]))
+#3
+
+print(longest_subarray_after_deleting_one_element([0,1,1,1,0,1,1,0,1]))
+#5
+
+print(longest_subarray_after_deleting_one_element([1,1,1]))
+#2
