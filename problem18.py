@@ -26,7 +26,7 @@ The highest is 0.
  
 '''
 
-# -------sol--------prefix sum probelm------------TC=O(n)------
+# -------sol--------prefix sum problem------------TC=O(n)------
 
 # we have to start by altitude 0 , which will be our cur_altitude
 # initialize a variable highest_altitude = cur_altitude
